@@ -1,2 +1,0 @@
-# wordpress-plugin
-Wordpress plugin

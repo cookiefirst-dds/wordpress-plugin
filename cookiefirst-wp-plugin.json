@@ -1,0 +1,11 @@
+{
+  "name": "CookieFirst Plugin",
+  "version": "2.0.0",
+  "download_url": "https://cookiefirst.com/plugins/cookiefirst-wp-plugin.zip",
+  "homepage": "https://cookiefirst.com/",
+  "author": "CookieFirst",
+  "author_homepage": "https://cookiefirst.com/",
+  "sections": {
+    "description": "CookieFirst Cookie Consent Management Wordpress plugin."
+  }
+}

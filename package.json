@@ -1,0 +1,36 @@
+{
+  "name": "cookiefirst-plugin",
+  "version": "2.0.0",
+  "description": "CookieFirst Plugin License: GPLv2 or later License URI: http://www.gnu.org/licenses/gpl-2.0.html",
+  "main": "index.js",
+  "dependencies": {
+    "babel-polyfill": "^6.23.0",
+    "bootstrap": "4.0.0",
+    "browser-sync": "^2.18.13",
+    "browser-sync-webpack-plugin": "^1.2.0",
+    "cross-env": "^5.2.1",
+    "exports-loader": "^0.6.4",
+    "laravel-mix": "^4.1.2",
+    "lodash": "^4.17.4",
+    "stylefmt": "^5.3.2",
+    "stylelint": "^7.10.1",
+    "stylelint-config-standard": "^16.0.0",
+    "stylelint-webpack-plugin": "^0.7.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "dev": "npm run development",
+    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "npm run development -- --watch",
+    "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "prod": "npm run production",
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "prepare-plugin": "rsync -a . cookiefirst-plugin && zip -r cookiefirst-wp-plugin.zip cookiefirst-plugin && rm -rf cookiefirst-plugin",
+    "rsync:staging": "rsync -rlzvc --stats --delete-after -e 'ssh -p 22' ./cookiefirst-wp-plugin.* rafalolichwer@s6.mydevil.net:~/domains/zoloautor.pl/public_html/plugins/",
+    "rsync:production": "rsync -rlzvc --stats --delete-after -e 'ssh -p 22' ./cookiefirst-wp-plugin.* cookiefirst.com@serv01.consentstack.com:~/httpdocs/plugins/"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/qoorts_dev/cookiefirst-wp-plugin#readme"
+}
